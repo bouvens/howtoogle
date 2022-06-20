@@ -1,0 +1,30 @@
+{
+  "name": "howtoogle",
+  "version": "0.0.1",
+  "description": "A joking Google search-based website",
+  "private": true,
+  "keywords": [
+    "search",
+    "js",
+    "google"
+  ],
+  "license": "CC BY 4.0",
+  "author": "Aleksandr Demin <web@developr.ru> (https://bouvens.github.io/)",
+  "homepage": "https://howtoogle.site",
+  "repository": "github:bouvens/howtoogle",
+  "scripts": {
+    "build": "rimraf dist && parcel build index.html --out-dir dist --public-url ./",
+    "start": "rimraf temp && parcel index.html --open --out-dir temp",
+    "deploy": "npm run build && gh-pages -d dist",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "gh-pages": "^4.0.0",
+    "parcel-bundler": "^1.12.4",
+    "rimraf": "^3.0.2"
+  },
+  "dependencies": {
+    "@algolia/autocomplete-js": "^1.6.3",
+    "@algolia/autocomplete-theme-classic": "^1.6.3"
+  }
+}
