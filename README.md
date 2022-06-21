@@ -8,6 +8,10 @@
 
 A joking Google search-based website for "how to" requests
 
+## [Demo](https://howtoogle.site)
+
+The project is up and running at [howtoogle.site](https://howtoogle.site) at the moment.
+
 ## _How To_ Run Locally
 
 Run the next commands in a shell:
