@@ -1,0 +1,15 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+    Aleksandr Demin -- Web Developer -- https://twitter.com/bouvens
+
+# THANKS
+
+    lmgtfy.app/ for understanding that everything is possible
+
+# TECHNOLOGY COLOPHON
+
+    CSS3, HTML5
+    algolia/autocomplete, parcel-bundler, Modernizr, Normalize.css
