@@ -2,8 +2,9 @@ import { h, createElement, Fragment, render } from 'preact'
 import { useEffect, useRef } from 'preact/hooks'
 import { autocomplete } from '@algolia/autocomplete-js'
 import '@algolia/autocomplete-theme-classic'
+import { updateSearch } from '../custom-search'
 
-export function Autocomplete({ setQuery, getSuggestions, ...props }) {
+export function Autocomplete({ setQuery, getSuggestions, onSearch, ...props }) {
   const containerRef = useRef(null)
 
   useEffect(() => {
@@ -31,6 +32,11 @@ export function Autocomplete({ setQuery, getSuggestions, ...props }) {
           },
         },
       ],
+      onStateChange: ({ state: { isOpen, query } }) => {
+        if (!isOpen && query.length) {
+          onSearch(query)
+        }
+      },
       ...props,
     })
     setQuery(search.setQuery)

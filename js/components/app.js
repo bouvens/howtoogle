@@ -19,6 +19,11 @@ export function App() {
     initializeSearch(setQuery)
   }, [])
 
+  const onSearch = useCallback((query) => {
+    setQuery(query)
+    updateSearch(query)
+  }, [])
+
   return (
     <Fragment>
       <div className="search">
@@ -33,12 +38,7 @@ export function App() {
           openOnFocus
           setQuery={saveQuery}
           getSuggestions={getSuggestions}
-          onStateChange={({ state: { isOpen, query } }) => {
-            if (!isOpen && query.length) {
-              setQuery(query)
-              updateSearch(query)
-            }
-          }}
+          onSearch={onSearch}
         />
       </div>
       <Description query={query} setQuery={changeQuery} />
