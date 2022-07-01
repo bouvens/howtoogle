@@ -1,13 +1,12 @@
-const PREFIX = 'how to '
+import { addPrefix, removePrefix } from './how-to'
+
 const GLOBAL_AUTOCOMPLETE_CALLBACK = 'accb'
 let callbackIndex = 0
-
-const addPrefix = (query) => `${PREFIX}${query}`
 
 export function initializeSearch(cb = () => {}) {
   function searchStartingCallback(gname, query) {
     cb(query)
-    return query.indexOf(PREFIX) === 0 ? query : addPrefix(query)
+    return addPrefix(query)
   }
 
   window.__gcse = {
@@ -56,13 +55,15 @@ function get10Suggestions(query) {
 }
 
 export const getSuggestions = (query) => new Promise((resolve) => {
+  const preparedQuery = addPrefix(query)
+  if (!preparedQuery.length) {
+    resolve([])
+    return
+  }
   const callback = makeOneTimeCallback((data) => {
-    resolve(data[1].map((item) => {
-      const label = item[0].indexOf(PREFIX) === 0 ? item[0].slice(PREFIX.length) : item[0]
-      return { label }
-    }))
+    resolve(data[1].map((item) => removePrefix(item[0])))
   })
-  get30Suggestions(addPrefix(query), getGlobalName(callback.index))
+  get30Suggestions(preparedQuery, getGlobalName(callback.index))
 })
 
 export function updateSearch(query) {

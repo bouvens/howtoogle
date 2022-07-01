@@ -18,7 +18,8 @@ export function Autocomplete({ setQuery, getSuggestions, ...props }) {
         {
           sourceId: 'suggestions',
           getItems({ query }) {
-            return getSuggestions(query)
+            return getSuggestions(query).then((items) =>
+              items.map((label) => ({ label })))
           },
           getItemInputValue({ item }) {
             return item.label

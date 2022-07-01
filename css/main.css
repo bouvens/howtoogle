@@ -144,6 +144,14 @@ header {
   margin-right: 0.9em;
 }
 
+.dimmed {
+  color: #aaa;
+}
+
+.prefix input {
+  margin-right: 0.3em;
+}
+
 .suggestion {
   cursor: pointer;
   border-bottom: 1px dotted;
