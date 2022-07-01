@@ -156,6 +156,10 @@ header {
   margin-right: 0.3em;
 }
 
+.description {
+  margin-top: 2em;
+}
+
 .suggestion {
   cursor: pointer;
   border-bottom: 1px dotted;
