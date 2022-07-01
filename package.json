@@ -26,6 +26,7 @@
   },
   "dependencies": {
     "@algolia/autocomplete-js": "^1.6.3",
-    "@algolia/autocomplete-theme-classic": "^1.6.3"
+    "@algolia/autocomplete-theme-classic": "^1.6.3",
+    "preact": "^10.8.2"
   }
 }

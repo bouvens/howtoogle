@@ -100,10 +100,6 @@ body {
   font-family: sans-serif;
 }
 
-.search-input:not(:focus):placeholder-shown {
-  background: url("https://www.google.com/cse/static/images/1x/en/branding.png") left center no-repeat;
-}
-
 .list {
   min-height: 100%;
   display: flex;

@@ -1,5 +1,3 @@
-import { updateDescriptionOnQuery } from './description'
-
 const PREFIX = 'how to '
 const GLOBAL_AUTOCOMPLETE_CALLBACK = 'accb'
 let callbackIndex = 0
@@ -68,6 +66,5 @@ export const getSuggestions = (query) => new Promise((resolve) => {
 })
 
 export function updateSearch(query) {
-  updateDescriptionOnQuery(query)
   window.location.href = `./#gsc.tab=0&gsc.sort=&gsc.q=${addPrefix(query)}`
 }
