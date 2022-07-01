@@ -1,6 +1,7 @@
 import { h, Fragment } from 'preact'
 import { useCallback, useEffect, useState } from 'preact/hooks'
 import { getSuggestions, initializeSearch, updateSearch } from '../custom-search'
+import logo from '/img/logo.svg'
 import { Autocomplete } from './autocomplete'
 import { Description } from './description'
 import { setHowTo as setHowToInSingleton } from '../how-to'
@@ -26,6 +27,12 @@ export function App() {
 
   return (
     <Fragment>
+      <header>
+        <a href=".">
+          <img className="logo" src={logo} alt="howTOogle" />
+        </a>
+      </header>
+
       <div className="search">
         <span className={`prefix${howTo ? '' : ' dimmed'}`}>
           <label><input
