@@ -1,10 +1,11 @@
 import { h, Fragment } from 'preact'
 import { useCallback, useEffect, useState } from 'preact/hooks'
 import { getSuggestions, initializeSearch, updateSearch } from '../custom-search'
+import { setHowTo as setHowToInSingleton } from '../how-to'
 import logo from '/img/logo.svg'
 import { Autocomplete } from './autocomplete'
 import { Description } from './description'
-import { setHowTo as setHowToInSingleton } from '../how-to'
+import { useCount } from './helpers/use-count'
 
 export function App() {
   const [changeQuery, setChangeQuery] = useState()
@@ -15,9 +16,16 @@ export function App() {
     setHowToInSingleton(howTo)
   }, [howTo])
 
+  const [searchCount, incrementCount] = useCount()
+
   const [query, setQuery] = useState()
   useEffect(() => {
-    initializeSearch(setQuery)
+    initializeSearch((query) => {
+      setQuery(query)
+      if (howTo) {
+        incrementCount()
+      }
+    })
   }, [])
 
   const onSearch = useCallback((query) => {
@@ -28,9 +36,13 @@ export function App() {
   return (
     <Fragment>
       <header>
-        <a href=".">
-          <img className="logo" src={logo} alt="howTOogle" />
-        </a>
+        <div className="logo-wrapper">
+          <a href=".">
+            <img className="logo" src={logo} alt="howTOogle" />
+          </a>
+          {!!searchCount &&
+            <div className="search-count" title="How-To Searches Last Week">{searchCount}</div>}
+        </div>
       </header>
 
       <div className="search">

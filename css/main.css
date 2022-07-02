@@ -129,6 +129,20 @@ header {
   text-align: center;
 }
 
+.logo-wrapper {
+  position: relative;
+}
+
+.search-count {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: red;
+  border-radius: 1em;
+  padding: 0 0.4em;
+  color: #fff;
+}
+
 .logo {
   max-width: 27rem;
 }
