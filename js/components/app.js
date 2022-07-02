@@ -8,7 +8,7 @@ import { Description } from './description'
 import { useCount } from './helpers/use-count'
 
 export function App() {
-  const [changeQuery, setChangeQuery] = useState()
+  const [changeQuery, setChangeQuery] = useState(() => () => {})
   const saveQuery = useCallback((func) => setChangeQuery(() => func), [setChangeQuery])
 
   const [howTo, setHowTo] = useState(true)
