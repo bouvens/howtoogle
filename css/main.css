@@ -110,7 +110,7 @@ body {
   justify-content: space-between;
   flex-direction: column;
   margin: 0 auto;
-  padding: 0 5% 0.6rem;
+  padding: 0 3rem 0.6rem;
   max-width: 38rem;
 }
 
@@ -136,7 +136,7 @@ header {
 .search-count {
   position: absolute;
   top: 0;
-  right: 0;
+  right: -1.7rem;
   background: red;
   border-radius: 1em;
   padding: 0 0.4em;
