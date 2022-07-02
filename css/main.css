@@ -122,7 +122,7 @@ body {
 }
 
 header, .search, .description {
-  margin: 1em;
+  margin: 2em 1em 1em;
 }
 
 header {
@@ -154,10 +154,6 @@ header {
 
 .prefix input {
   margin-right: 0.3em;
-}
-
-.description {
-  margin-top: 2em;
 }
 
 .suggestion {
