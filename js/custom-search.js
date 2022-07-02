@@ -1,4 +1,4 @@
-import { addPrefix, removePrefix } from './how-to'
+import { addPrefix, removePrefix } from './components/helpers/how-to'
 
 const GLOBAL_AUTOCOMPLETE_CALLBACK = 'accb'
 let callbackIndex = 0

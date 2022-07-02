@@ -1,8 +1,9 @@
 import { h, Fragment } from 'preact'
 import { useCallback, useEffect, useState } from 'preact/hooks'
 import { getSuggestions, initializeSearch, updateSearch } from '../custom-search'
-import { setHowTo as setHowToInSingleton } from '../how-to'
+import { getHowTo } from './helpers/how-to'
 import logo from '/img/logo.svg'
+import { HowToToggle } from './how-to-toggle'
 import { Autocomplete } from './autocomplete'
 import { Description } from './description'
 import { useCount } from './helpers/use-count'
@@ -11,18 +12,13 @@ export function App() {
   const [changeQuery, setChangeQuery] = useState(() => () => {})
   const saveQuery = useCallback((func) => setChangeQuery(() => func), [setChangeQuery])
 
-  const [howTo, setHowTo] = useState(true)
-  useEffect(() => {
-    setHowToInSingleton(howTo)
-  }, [howTo])
-
   const [searchCount, incrementCount] = useCount()
 
   const [query, setQuery] = useState()
   useEffect(() => {
     initializeSearch((query) => {
       setQuery(query)
-      if (howTo) {
+      if (getHowTo()) {
         incrementCount()
       }
     })
@@ -46,12 +42,7 @@ export function App() {
       </header>
 
       <div className="search">
-        <span className={`prefix${howTo ? '' : ' dimmed'}`}>
-          <label><input
-            type="checkbox"
-            checked={howTo}
-            onChange={({ target: { checked } }) => setHowTo(checked)}
-          />How to</label></span>
+        <HowToToggle />
         <Autocomplete
           autoFocus={false}
           openOnFocus
