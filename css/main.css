@@ -143,6 +143,12 @@ header {
   color: #fff;
 }
 
+@media (min-width: 615px) {
+  .search-count {
+    right: 0;
+  }
+}
+
 .logo {
   max-width: 27rem;
 }
