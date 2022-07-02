@@ -37,7 +37,7 @@ export function App() {
             <img className="logo" src={logo} alt="howTOogle" />
           </a>
           {!!searchCount &&
-            <div className="search-count" title="How-To Searches Last Week">{searchCount}</div>}
+            <div className="search-count" title="Your How-To Searches Last Week">{searchCount}</div>}
         </div>
       </header>
 
