@@ -104,26 +104,29 @@ body {
   display: none;
 }
 
-.experiments-link {
-  display: inline-block;
-  margin: 2em 4em 0;
-}
-
 .list {
   min-height: 100%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   flex-direction: column;
   margin: 0 auto;
   padding: 0 3rem 0.6rem;
-  max-width: 38rem;
+}
+
+.experiments-link {
+  display: block;
+  width: 100%;
+  margin-top: 2em;
 }
 
 .main {
+  max-width: 33rem;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
   justify-content: center;
+  align-items: center;
 }
 
 header, .search, .description {
