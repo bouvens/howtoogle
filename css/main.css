@@ -129,6 +129,10 @@ body {
   align-items: center;
 }
 
+#root {
+  width: 100%;
+}
+
 header, .search, .description {
   margin: 2em 1em 1em;
 }
