@@ -13,7 +13,7 @@ export function Description({ query, setQuery }) {
         professionals, scientists, researchers, web development gurus, and everyone else.</p>
       <p><strong>Check now how to </strong>
         <Suggestion text="make a website" />
-        , <Suggestion text="earn money without a website" />
+        , <Suggestion text="make money without a website" />
         , <Suggestion text="get that money isn't everything" />
         , <Suggestion text="get friends without money" />
         , <Suggestion text="learn something useful" />
