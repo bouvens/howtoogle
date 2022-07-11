@@ -14,8 +14,9 @@ export const addPrefix = (query = '') => (
     : `${PREFIX}${query}`
 )
 
-export const removePrefix = (query) => (
-  howTo && query.indexOf(PREFIX) === 0
+export const removePrefix = (str) => {
+  const query = str ?? ''
+  return howTo && query.indexOf(PREFIX) === 0
     ? query.slice(PREFIX.length)
     : query
-)
+}

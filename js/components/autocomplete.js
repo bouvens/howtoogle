@@ -2,7 +2,7 @@ import { h, createElement, Fragment, render } from 'preact'
 import { useEffect, useRef } from 'preact/hooks'
 import { autocomplete } from '@algolia/autocomplete-js'
 import '@algolia/autocomplete-theme-classic'
-import { updateSearch } from '../custom-search'
+import { removePrefix } from './helpers/how-to'
 
 export function Autocomplete({ setQuery, getSuggestions, onSearch, ...props }) {
   const containerRef = useRef(null)
@@ -11,10 +11,12 @@ export function Autocomplete({ setQuery, getSuggestions, onSearch, ...props }) {
     if (!containerRef.current) {
       return undefined
     }
+    const query = removePrefix(new URLSearchParams(window.location.hash.slice(1)).get('gsc.q'))
 
     const search = autocomplete({
       container: containerRef.current,
       renderer: { createElement, Fragment, render },
+      initialState: { query },
       getSources: () => [
         {
           sourceId: 'suggestions',
