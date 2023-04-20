@@ -10,7 +10,7 @@
   ],
   "license": "CC BY 4.0",
   "author": "Aleksandr Demin <web@developr.ru> (https://bouvens.github.io/)",
-  "homepage": "https://howtoogle.site",
+  "homepage": "https://bouvens.github.io/howtoogle",
   "repository": "github:bouvens/howtoogle",
   "scripts": {
     "build": "rimraf dist && parcel build index.html --out-dir dist --public-url ./",

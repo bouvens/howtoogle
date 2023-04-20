@@ -8,9 +8,9 @@
 
 A joking Google search-based website for "how to" requests
 
-## [Demo](https://howtoogle.site)
+## [Demo](https://bouvens.github.io/howtoogle)
 
-The project is up and running at [howtoogle.site](https://howtoogle.site) at the moment.
+The project is [up and running](https://bouvens.github.io/howtoogle) at the moment.
 
 ## _How To_ Run Locally
 
